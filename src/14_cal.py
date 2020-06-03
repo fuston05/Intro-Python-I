@@ -30,3 +30,34 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+
+def makeCal():
+  currentMonth= int(datetime.today().strftime("%m"))
+  currentYear= int(datetime.today().strftime("%Y"))
+
+# if args len  > 1 we know user entered "something"
+  if len(sys.argv) > 1:
+    print(f"sysargv: {sys.argv}")
+    args= sys.argv
+    argsLen= len(args)
+
+    # if only one arg is entered
+    if argsLen == 2:
+      userMonth= int(args[1])
+      userYear= currentYear
+
+    # if user entered 2 values
+    elif argsLen == 3:
+      userMonth= int(args[1])
+      userYear= int(args[2])
+
+  # user did not enter any args
+  else: 
+    userMonth= currentMonth
+    userYear= currentYear
+
+  print(f'\n{calendar.month(userYear, userMonth)}')
+  print('Run program name followed by an [optional] month and year ie. "python 14_cal.py [6] [2020]"\n')
+
+makeCal()

@@ -1,0 +1,3 @@
+This is the first line of our new file. 
+This is the second line of our new file. 
+This is the third line of our new file. 
